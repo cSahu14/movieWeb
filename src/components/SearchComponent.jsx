@@ -36,6 +36,7 @@ const Submit = styled.button `
     font-size : 1rem;
     padding : 0.5rem 1rem;
     color : #fff;
+    cursor : pointer;
     ::placeholder {
         color : #7378c5;
     }
@@ -49,9 +50,7 @@ const SearchComponent = () => {
     const [name, setName] = useState("");
     const dispatch = useDispatch();
     const handleSubmit = (e) => {
-        console.log("submit")
         e.preventDefault();
-        // dispatch(getMovies(name));
         dispatch(getMovies(name))
     }
     

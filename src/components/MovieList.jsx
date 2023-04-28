@@ -20,7 +20,9 @@ const MovieList = () => {
   
   return <Container>
     {isLoad ? "Loading..." : moviesList?.results?.map(movie => (
+      <div key={movie.id}>
         <MovieCard movie={movie}/>
+      </div>
     ))}
   </Container>;
 };

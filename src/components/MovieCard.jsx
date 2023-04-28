@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Movie = styled.div`
 
@@ -10,6 +11,7 @@ box-shadow : 0 4px 5px rgba(0, 0, 0, 0.2);
 position : relative;
 overflow : hidden;
 border-radius : 3px;
+cursor : pointer;
     
 img {
     width: 100%;
@@ -53,9 +55,16 @@ const Overview = styled.div`
   }
 `;
 
+
 const MovieCard = ({movie}) => {
+
+  const navigate = useNavigate()
+  const handleClickMovie = () => {
+    navigate(`/movie/${movie?.id}`)
+  }
+  
   return (
-    <Movie>
+    <Movie onClick={handleClickMovie}>
       <img src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`} alt="" />
       <MovieInfo>
         <h3>{movie?.title}</h3>

@@ -4,11 +4,19 @@ const API_ENDPOINT = `https://api.themoviedb.org/3/discover/movie?sort_by=popula
 
 const API_SEARCH_ENDPOINT = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}`
 
+const API_SEARCH_MOVIE = `https://api.themoviedb.org/3/movie/`
+
 export const fetchMovies = async (movieName) => {
     if(movieName == ""){
         return axios.get(API_ENDPOINT)
     }
     return axios.get(`${API_SEARCH_ENDPOINT}&query=${movieName}`)
+}
+
+export const fetchMovie = async (movieId) => {
+    if(movieId) {
+        return axios.get(`${API_SEARCH_MOVIE}${movieId}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US`)
+    }
 }
 
 
