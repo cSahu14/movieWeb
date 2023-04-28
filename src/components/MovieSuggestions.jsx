@@ -11,7 +11,7 @@ const Movie = styled.div`
   border-radius: 3px;
   display: flex;
   @media (max-width: 768px) {
-    flex-direction: column;
+    margin: 0.5rem;
   }
 
   img {
@@ -20,7 +20,7 @@ const Movie = styled.div`
 
     object-fit: contain;
     @media (max-width: 768px) {
-      width: 40px;
+      width: 50px;
     }
   }
 `;

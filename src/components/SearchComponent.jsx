@@ -10,6 +10,10 @@ const Header = styled.header`
   justify-content: flex-end;
   background-color: var(--secondary-color);
   position: relative;
+  @media (max-width: 768px) {
+    display : flex;
+    justify-content : center;
+  }
 `;
 
 const Input = styled.input`
@@ -28,10 +32,8 @@ const Input = styled.input`
     outline: none;
     background-color: var(--primary-color);
   }
-  border-bottom-left-radius: ${(props) => (props.$border ? "0px" : "50px")};
-  border-bottom-right-radius: ${(props) => (props.$border ? "0px" : "50px")};
   @media (max-width: 768px) {
-    border-radius: 50px;
+    width: 220px;
   }
 `;
 
@@ -43,10 +45,12 @@ const Suggestion = styled.div`
   border: 2px solid var(--primary-color);
   font-family: inherit;
   font-size: 1rem;
-  // padding : 0.5rem 1rem;
   color: #fff;
   position: absolute;
   z-index: 1000;
+  @media (max-width: 768px) {
+    width: 220px;
+  }
 `;
 
 const Submit = styled.button`
@@ -106,7 +110,6 @@ const SearchComponent = () => {
     <Header>
       <form onSubmit={handleSubmit}>
         <Input
-          $border={moviesList?.results?.length > 0}
           type="text"
           placeholder="Search"
           value={name}
