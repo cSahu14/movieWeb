@@ -16,10 +16,13 @@ const Movie = styled.div`
   }
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 400px;
 
     object-fit: contain;
+    @media (max-width: 768px) {
+        width: 250px;
+    }
   }
 `;
 
@@ -37,14 +40,7 @@ const MovieInfo = styled.div`
 `;
 
 const Img = styled.div`
-  padding: 0.5rem;
-  width: 600px;
-  height: 400px;
-  margin: auto;
 
-  @media (max-width: 768px) {
-    width: 250px;
-  }
 `;
 
 const MovieDetails = styled.div``;
