@@ -17,7 +17,6 @@ const Movie = () => {
         }
     }, [id])
     
-    console.log(movie)
   return (
     <div>
         <MoviePage movie={movie}/>
