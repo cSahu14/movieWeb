@@ -7,10 +7,12 @@ const API_SEARCH_ENDPOINT = `https://api.themoviedb.org/3/search/movie?api_key=$
 const API_SEARCH_MOVIE = `https://api.themoviedb.org/3/movie/`
 
 export const fetchMovies = async (movieName) => {
-    if(movieName == ""){
-        return axios.get(API_ENDPOINT)
-    }
+
     return axios.get(`${API_SEARCH_ENDPOINT}&query=${movieName}`)
+}
+
+export const fetchPopularMovies = async () => {
+        return axios.get(API_ENDPOINT)
 }
 
 export const fetchMovie = async (movieId) => {

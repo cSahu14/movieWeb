@@ -40,7 +40,9 @@ const MovieInfo = styled.div`
 `;
 
 const Img = styled.div`
-
+@media (max-width: 768px) {
+    margin : auto;
+}
 `;
 
 const MovieDetails = styled.div``;
