@@ -32,6 +32,8 @@ const Input = styled.input`
     outline: none;
     background-color: var(--primary-color);
   }
+  border-bottom-left-radius: ${(props) => (props.$border ? "0px" : "50px")};
+  border-bottom-right-radius: ${(props) => (props.$border ? "0px" : "50px")};
   @media (max-width: 768px) {
     width: 220px;
   }
@@ -110,6 +112,7 @@ const SearchComponent = () => {
     <Header>
       <form onSubmit={handleSubmit}>
         <Input
+          $border={moviesList?.results?.length > 0}
           type="text"
           placeholder="Search"
           value={name}
