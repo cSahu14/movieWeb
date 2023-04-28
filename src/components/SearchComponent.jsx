@@ -27,6 +27,24 @@ const Input = styled.input `
     }
 `;
 
+const Submit = styled.button `
+    margin-left : 0.2rem;
+    background-color : transparent;
+    border : 2px solid var(--primary-color);
+    border-radius : 50px;
+    font-family : inherit;
+    font-size : 1rem;
+    padding : 0.5rem 1rem;
+    color : #fff;
+    ::placeholder {
+        color : #7378c5;
+    }
+    :focus {
+        outline : none;
+        background-color : var(--primary-color);
+    }
+`
+
 const SearchComponent = () => {
     const [name, setName] = useState("");
     const dispatch = useDispatch();
@@ -39,8 +57,9 @@ const SearchComponent = () => {
     
   return (
     <Header>
-        <form onSubmit={handleSubmit}>
+        <form>
             <Input type="text" placeholder='Search' value={name} onChange={(e) => setName(e.target.value)}/>
+            <Submit type="button" onClick={handleSubmit}>Search</Submit>
         </form>
     </Header>
   )
