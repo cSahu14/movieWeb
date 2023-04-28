@@ -55,6 +55,19 @@ const Overview = styled.div`
   }
 `;
 
+const Date = styled.div `
+color : #eee;
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    padding : 0.5rem 1rem 1rem;
+    letter-spacing : 0.5px;
+
+    h3 {
+        margin-top : 0;
+    }
+`
+
 
 const MovieCard = ({movie}) => {
 
@@ -70,6 +83,9 @@ const MovieCard = ({movie}) => {
         <h3>{movie?.title}</h3>
         <Rating $primary={movie?.vote_average >= 5} $secondary={movie?.vote_average < 5}>{movie?.vote_average}</Rating>
       </MovieInfo>
+        <Date>
+          <h3>{movie?.release_date}</h3>
+        </Date>
       <Overview className="overview">
         <h3>Overview</h3>
         <p>
